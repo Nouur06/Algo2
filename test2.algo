@@ -1,0 +1,34 @@
+ALGORITHM Dot product
+
+VAR
+    v1[100], v2[100] : ARRAY OF INTEGER;
+    n : INTEGER;
+    p : INTEGER;
+    i, j : INTEGER;
+    pairs : INTEGER;
+
+BEGIN
+
+    Read (pairs);
+
+    FOR j FROM 1 TO pairs DO
+
+        Read (n);
+
+        FOR i FROM 0 TO n-1 DO
+            Read (v1[i]);
+        ENDFOR
+
+        FOR i FROM 0 TO n-1 DO
+            Read (v2[i]);
+        ENDFOR
+
+        IF (p == 0) THEN
+            Write ("Orthogonal");
+        ELSE
+            Write ("Not Orthogonal");
+        ENDIF
+
+    ENDFOR
+
+END

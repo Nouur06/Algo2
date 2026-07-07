@@ -1,0 +1,46 @@
+ALGORITHM SumDistinct
+
+VAR
+    A[100], B[100] : ARRAY OF INTEGER
+    n, m : INTEGER
+    i, j : INTEGER
+    found : BOOLEAN
+    sum : INTEGER
+
+BEGIN
+
+    Read (n);
+    Read (A);
+    Read (m);
+    Read (B);
+    sum := 0;
+    FOR i FROM 0 TO n-1 DO
+        found => FALSE;
+
+        FOR j FROM 0 TO m-1 DO
+              IF (A[i] = B[j]) THEN
+        found => TRUE;
+    END_IF
+        ENDFOR
+
+        IF (found == FALSE) THEN
+            sum := sum + A[i];
+        ENDIF
+    END_FOR
+    FOR i FROM 0 TO m-1 DO
+        found => FALSE;
+
+        FOR j FROM 0 TO n-1 DO
+            IF (B[i] = A[j]) THEN
+                found => TRUE;
+            ENDIF
+        ENDFOR
+
+        IF (found == FALSE) THEN
+            sum := sum + B[i] ;
+        ENDIF
+    ENDFOR
+
+    Write (sum);
+
+END
